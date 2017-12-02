@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202092012) do
+ActiveRecord::Schema.define(version: 20171202125756) do
 
   create_table "medicine_types", force: :cascade do |t|
     t.string "generic_name"
@@ -18,6 +18,36 @@ ActiveRecord::Schema.define(version: 20171202092012) do
     t.decimal "average_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prescription_medicines", force: :cascade do |t|
+    t.integer "medicine_type_id"
+    t.integer "prescription_id"
+    t.integer "limit"
+    t.integer "purchased"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.integer "doctor_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transaction_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.decimal "total", precision: 12, scale: 3
+    t.integer "order_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_status_id"], name: "index_transactions_on_order_status_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,7 +61,6 @@ ActiveRecord::Schema.define(version: 20171202092012) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
