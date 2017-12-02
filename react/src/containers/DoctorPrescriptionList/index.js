@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {Table, Row, Col, Button} from "react-bootstrap";
 
+
 class DoctorPrescriptionListView extends React.Component {
 	render() {
 		return (

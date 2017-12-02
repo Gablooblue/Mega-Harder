@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 
 // Home page component
 export default class Home extends React.Component {
@@ -11,3 +11,16 @@ export default class Home extends React.Component {
     );
   }
 }
+*/
+var React = require("react"),
+   Table = require("../containers/DoctorPrescriptionList/PrescriptionTable.js");
+
+
+function test(){
+  return (
+    <Table/>
+  );
+}
+
+
+module.exports = test;

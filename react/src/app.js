@@ -1,4 +1,5 @@
 import React from "react";
+import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import "./stylesheets/main.scss";
 import Header from "./components/Header"
 
