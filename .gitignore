@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+vendor/bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -16,9 +17,13 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.swp
 
 # Ignore Byebug command history file.
 .byebug_history
 /public/packs
 /public/packs-test
 /node_modules
+
+#Ignore the Gemfile.lock
+Gemfile.lock
