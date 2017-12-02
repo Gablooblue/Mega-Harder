@@ -1,6 +1,7 @@
 class Transaction < ApplicationRecord
   has_one :transaction_status
   has_many :prescription_medicines
+  belongs_to :user
   before_create :set_transaction_status
   before_save :update_total
 

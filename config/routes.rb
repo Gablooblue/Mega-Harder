@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    get 'prescriptions'
     get 'transactions'
     resources :prescriptions do
 	resources :prescription_medicines
