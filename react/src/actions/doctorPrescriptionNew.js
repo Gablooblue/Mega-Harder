@@ -34,9 +34,9 @@ export const actions = {
   removeMedicine: (medicineId) => ({type: types.MEDICINE_REMOVE, medicineId}),
   updateMedicineQuantity: (medicineId, quantity) => ({type: types.MEDICINE_QUANTITY_UPDATE, medicineId, quantity}),
 
-	prescriptionCreate: () => ({type: types.PRESCRIPTION_CREATE_REQUESTED}),
-	prescriptionCreateSucceeded: (medicines) => ({type: types.PRESCRIPTION_CREATE_SUCCEEDED, medicines}),
-	prescriptionCreateFailed: (error) => ({type: types.PRESCRIPTION_CREATE_FAILED, error}),
+	createPrescription: () => ({type: types.PRESCRIPTION_CREATE_REQUESTED}),
+	createPrescriptionSucceeded: () => ({type: types.PRESCRIPTION_CREATE_SUCCEEDED}),
+	createPrescriptionFailed: (error) => ({type: types.PRESCRIPTION_CREATE_FAILED, error}),
 };
 
 

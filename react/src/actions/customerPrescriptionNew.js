@@ -13,9 +13,9 @@ export const types = {
 
   PRESCRIBED_MEDICINE_QUANTITY_UPDATE: 'DOCTOR/MEDICINE_QUANTITY_UPDATE',
 
-	PRESCRIPTION_CREATE_REQUESTED: 'DOCTOR/PRESCRIPTION_CREATE_REQUESTED',
-	PRESCRIPTION_CREATE_SUCCEEDED: 'DOCTOR/PRESCRIPTION_CREATE_SUCCEEDED',
-	PRESCRIPTION_CREATE_FAILED: 'DOCTOR/PRESCRIPTION_CREATE_FAILED'
+	PRESCRIPTION_ORDER_CREATE_REQUESTED: 'DOCTOR/PRESCRIPTION_ORDER_CREATE_REQUESTED',
+	PRESCRIPTION_ORDER_CREATE_SUCCEEDED: 'DOCTOR/PRESCRIPTION_ORDER_CREATE_SUCCEEDED',
+	PRESCRIPTION_ORDER_CREATE_FAILED: 'DOCTOR/PRESCRIPTION_ORDER_CREATE_FAILED'
 };
 
 
@@ -24,7 +24,7 @@ export const actions = {
 	fetchMedicinesSucceeded: (medicines) => ({type: types.MEDICINES_FETCH_SUCCEEDED, medicines}),
 	fetchMedicinesFailed: (error) => ({type: types.MEDICINES_FETCH_FAILED, error}),
 
-	fetchPrescribedMedicines: (prescriptionId) => ({type: types.PRESCRIBED_MEDICINES_FETCH_REQUESTED, prescriptionId}),
+	fetchPrescribedMedicines: (customerId, prescriptionId) => ({type: types.PRESCRIBED_MEDICINES_FETCH_REQUESTED, customerId, prescriptionId}),
 	fetchPrescribedMedicinesSucceeded: (medicines) => ({type: types.PRESCRIBED_MEDICINES_FETCH_SUCCEEDED, medicines}),
 	fetchPrescribedMedicinesFailed: (error) => ({type: types.PRESCRIBED_MEDICINES_FETCH_FAILED, error}),
 
@@ -36,9 +36,9 @@ export const actions = {
 
   updatePrescribedMedicineQuantity: (medicineId, quantity) => ({type: types.PRESCRIBED_MEDICINE_QUANTITY_UPDATE, medicineId, quantity}),
 
-	prescriptionCreate: () => ({type: types.PRESCRIPTION_CREATE_REQUESTED}),
-	prescriptionCreateSucceeded: (medicines) => ({type: types.PRESCRIPTION_CREATE_SUCCEEDED, medicines}),
-	prescriptionCreateFailed: (error) => ({type: types.PRESCRIPTION_CREATE_FAILED, error}),
+	createPrescriptionOrder: () => ({type: types.PRESCRIPTION_ORDER_CREATE_REQUESTED}),
+	createPrescriptionOrderSucceeded: (medicines) => ({type: types.PRESCRIPTION_ORDER_CREATE_SUCCEEDED, medicines}),
+	createPrescriptionOrderFailed: (error) => ({type: types.PRESCRIPTION_ORDER_CREATE_FAILED, error}),
 };
 
 

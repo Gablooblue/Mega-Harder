@@ -139,6 +139,12 @@ export default function doctorPrescriptionNewReducer(state = initialState, actio
   }
 }
 
+// FIXME: Provide real value
+// export const getDoctorId = state => ;
+export const getDoctorId = state => 1;
+export const getSelectedMedicines= state => state.customerPrescriptionNew.selectedMedicines;
+export const getSelectedCustomerId= state => state.customerPrescriptionNew.selectedCustomerId;
+
 
 function extractCustomerDetails(customer) {
   return customer;
@@ -147,3 +153,17 @@ function extractCustomerDetails(customer) {
 function extractMedicineDetails(medicine) {
   return medicine;
 }
+
+
+export function getPrescriptionPayload(state) {
+	const selectedMedicines = getSelectedMedicines(state);
+	const selectedCustomerId = getSelectedCustomerId(state);
+
+	return {
+		medicines: selectedMedicines,
+		selectedCustomerId: selectedCustomerId
+	};
+}
+
+
+
