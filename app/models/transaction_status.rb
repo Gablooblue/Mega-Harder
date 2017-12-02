@@ -1,3 +1,3 @@
 class TransactionStatus < ApplicationRecord
-    belongs_to :transaction
+    has_many :transactions
 end

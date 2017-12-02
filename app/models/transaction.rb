@@ -4,7 +4,7 @@ class Transaction < ApplicationRecord
   before_create :set_transaction_status
   before_save :update_total
 
-  def subtotal
+  def total
     prescription_medicines.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 

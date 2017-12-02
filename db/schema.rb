@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202125756) do
+ActiveRecord::Schema.define(version: 20171202155746) do
 
   create_table "medicine_types", force: :cascade do |t|
     t.string "generic_name"
@@ -18,15 +18,18 @@ ActiveRecord::Schema.define(version: 20171202125756) do
     t.decimal "average_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active"
   end
 
   create_table "prescription_medicines", force: :cascade do |t|
     t.integer "medicine_type_id"
     t.integer "prescription_id"
     t.integer "limit"
-    t.integer "purchased"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "unit_price"
+    t.decimal "total_price"
   end
 
   create_table "prescriptions", force: :cascade do |t|
