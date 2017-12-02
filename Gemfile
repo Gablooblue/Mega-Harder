@@ -32,9 +32,16 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#React on Rails
 gem 'react_on_rails', '10.0.2'
 gem "webpacker", "~> 3.0"
+
+#Authentication
 gem 'devise'
+
+#Authorization
+gem 'cancancan', '~> 2.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
