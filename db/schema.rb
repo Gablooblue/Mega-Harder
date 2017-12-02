@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20171202155746) do
     t.integer "medicine_type_id"
     t.integer "prescription_id"
     t.integer "limit"
-    t.integer "quantity"
+    t.integer "purchased"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "unit_price"
     t.decimal "total_price"
   end
 
@@ -41,13 +40,13 @@ ActiveRecord::Schema.define(version: 20171202155746) do
 
   create_table "transaction_statuses", force: :cascade do |t|
     t.string "name"
+    t.integer "transaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
     t.decimal "total", precision: 12, scale: 3
-    t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
