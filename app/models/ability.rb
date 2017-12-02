@@ -31,13 +31,13 @@ class Ability
 
 	if user.present?
 	    if user.type == "customer"
-	    
+		can [:create, :read, :destroy], [Prescription, PrescriptionMedicine]
 	    end
 	    if user.type == "doctor"
-		
+		can :manage, [Prescription, PrescriptionMedicine]	
 	    end
 	    if user.type == "deliverer"
-
+		can :read, [Prescription, PrescriptionMedicine]
 	    end
 	end 
     end
