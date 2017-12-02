@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  generic_name: MyString
+  description: MyString
+  average_price: 9.99
+
+two:
+  generic_name: MyString
+  description: MyString
+  average_price: 9.99

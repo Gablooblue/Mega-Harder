@@ -1,0 +1,2 @@
+module MedicineTypesHelper
+end

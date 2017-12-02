@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Generic name:</strong>
+  <%= @medicine_type.generic_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @medicine_type.description %>
+</p>
+
+<p>
+  <strong>Average price:</strong>
+  <%= @medicine_type.average_price %>
+</p>
+
+<%= link_to 'Edit', edit_medicine_type_path(@medicine_type) %> |
+<%= link_to 'Back', medicine_types_path %>
