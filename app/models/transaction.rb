@@ -1,5 +1,6 @@
 class Transaction < ApplicationRecord
   has_one :transaction_status
+  has_many :transaction_items
   has_many :prescription_medicines
   belongs_to :user
   belongs_to :deliverer, class_name: "User"
