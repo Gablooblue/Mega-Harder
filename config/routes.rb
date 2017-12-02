@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transaction_items
   devise_for :users
   resources :medicine_types
   devise_scope :user do
