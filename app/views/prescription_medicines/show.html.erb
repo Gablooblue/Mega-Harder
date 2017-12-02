@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicine type:</strong>
+  <%= @prescription_medicine.medicine_type_id %>
+</p>
+
+<p>
+  <strong>Prescription:</strong>
+  <%= @prescription_medicine.prescription_id %>
+</p>
+
+<p>
+  <strong>Limit:</strong>
+  <%= @prescription_medicine.limit %>
+</p>
+
+<p>
+  <strong>Purchased:</strong>
+  <%= @prescription_medicine.purchased %>
+</p>
+
+<%= link_to 'Edit', edit_prescription_medicine_path(@prescription_medicine) %> |
+<%= link_to 'Back', prescription_medicines_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medicine_type_id: 1
+  prescription_id: 1
+  limit: 1
+  purchased: 1
+
+two:
+  medicine_type_id: 1
+  prescription_id: 1
+  limit: 1
+  purchased: 1
