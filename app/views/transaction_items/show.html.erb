@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicine type:</strong>
+  <%= @transaction_item.medicine_type_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @transaction_item.amount %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_item_path(@transaction_item) %> |
+<%= link_to 'Back', transaction_items_path %>
