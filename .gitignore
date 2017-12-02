@@ -25,7 +25,7 @@ db/schema.rb
 /public/packs
 /public/packs-test
 /node_modules
-/client/node_modules
+/react/node_modules
 
 #Ignore the Gemfile.lock
 Gemfile.lock
