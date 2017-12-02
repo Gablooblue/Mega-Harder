@@ -28,3 +28,6 @@ db/schema.rb
 
 #Ignore the Gemfile.lock
 Gemfile.lock
+
+
+.idea
