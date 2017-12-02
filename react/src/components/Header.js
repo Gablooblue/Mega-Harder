@@ -16,15 +16,42 @@ class Header extends React.Component {
 		super(props);
 
 		this.goToDoctorPrescriptionListPage = this.goToDoctorPrescriptionListPage.bind(this);
+		this.goToDoctorPrescriptionNewPage = this.goToDoctorPrescriptionNewPage.bind(this);
+		this.goToCustomerPrescriptionListPage = this.goToCustomerPrescriptionListPage.bind(this);
+		this.goToCustomerPrescriptionNewPage = this.goToCustomerPrescriptionNewPage.bind(this);
 	}
 
   goToDoctorPrescriptionListPage () {
     this.props.dispatch(push('/doctor/prescription/list'));
   };
 
+  goToDoctorPrescriptionNewPage () {
+    this.props.dispatch(push('/doctor/prescription/new'));
+  };
+
+  goToCustomerPrescriptionListPage () {
+    this.props.dispatch(push('/customer/prescription/list'));
+  };
+
+  goToCustomerPrescriptionNewPage () {
+    this.props.dispatch(push('/customer/prescription/new'));
+  };
+
   render() {
     const doctorPrescriptionListClass = classNames({
       active: this.props.location && this.props.location.pathname === '/doctor/prescription/list'
+    });
+
+    const doctorPrescriptionNewClass = classNames({
+      active: this.props.location && this.props.location.pathname === '/doctor/prescription/new'
+    });
+
+    const customerPrescriptionListClass = classNames({
+      active: this.props.location && this.props.location.pathname === '/customer/prescription/list'
+    });
+
+    const customerPrescriptionNewClass = classNames({
+      active: this.props.location && this.props.location.pathname === '/customer/prescription/new'
     });
 
     return (
@@ -35,7 +62,11 @@ class Header extends React.Component {
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <li className={doctorPrescriptionListClass}><a  onClick={this.goToDoctorPrescriptionListPage}>Prescriptions</a></li>
+          <li role="presentation" className={doctorPrescriptionListClass}><a role="button" onClick={this.goToDoctorPrescriptionListPage}>Doctor Prescriptions</a></li>
+          <li role="presentation" className={doctorPrescriptionNewClass}><a role="button"  onClick={this.goToDoctorPrescriptionNewPage}>New Doctor Prescriptions</a></li>
+
+          <li role="presentation" className={customerPrescriptionListClass}><a role="button" onClick={this.goToCustomerPrescriptionListPage}>Customer Prescriptions</a></li>
+          <li role="presentation" className={customerPrescriptionNewClass}><a role="button"  onClick={this.goToCustomerPrescriptionNewPage}>New Customer Prescriptions</a></li>
         </Nav>
       </Navbar>
     );
