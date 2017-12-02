@@ -44,10 +44,9 @@ ActiveRecord::Schema.define(version: 20171202125756) do
 
   create_table "transactions", force: :cascade do |t|
     t.decimal "total", precision: 12, scale: 3
-    t.integer "order_status_id"
+    t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_status_id"], name: "index_transactions_on_order_status_id"
   end
 
   create_table "users", force: :cascade do |t|

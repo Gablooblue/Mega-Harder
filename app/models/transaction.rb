@@ -1,5 +1,5 @@
 class Transaction < ApplicationRecord
-  belongs_to :order_status
+  has_one :transaction_status
   has_many :prescription_medicines
   before_create :set_transaction_status
   before_save :update_total
