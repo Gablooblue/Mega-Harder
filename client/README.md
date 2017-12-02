@@ -1,181 +1,154 @@
-# Deprecation Warning
+# React Redux minimal starter kit (boilerplate)
 
-This project was started at the advent of the Redux ecosystem, and was intended to help users get up and running quickly. Since then, tooling and best practices have evolved tremendously. In order to get the most modern experience possible, I recommend checking out something like [create-react-app](https://github.com/facebookincubator/create-react-app) which is supported by many core React and Redux developers.
 
-You are welcome to use this project if it is a better fit for your needs, but if you are brand new to the ecosystem I highly recommend checking out something that has received more recent updates.
+<br><a href="http://redux-minimal.js.org/"><img src="http://redux-minimal.js.org/logo/redux-minimal-logo-blue.svg"></a><br><br>
 
-Thank you to everyone who made this project possible over the past year(s).
 
-# React Redux Starter Kit
+[![Join the chat at https://gitter.im/catalin-luntraru/redux-minimal](https://badges.gitter.im/catalin-luntraru/redux-minimal.svg)](https://gitter.im/catalin-luntraru/redux-minimal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/catalin-luntraru/redux-minimal.svg?branch=master)](https://travis-ci.org/catalin-luntraru/redux-minimal?branch=master)
+[![dependencies](https://david-dm.org/catalin-luntraru/redux-minimal.svg)](https://david-dm.org/catalin-luntraru/redux-minimal)
+[![devDependency Status](https://david-dm.org/catalin-luntraru/redux-minimal/dev-status.svg)](https://david-dm.org/catalin-luntraru/redux-minimal?type=dev)
 
-[![Build Status](https://travis-ci.org/davezuko/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/davezuko/react-redux-starter-kit?branch=master)
-[![dependencies](https://david-dm.org/davezuko/react-redux-starter-kit.svg)](https://david-dm.org/davezuko/react-redux-starter-kit)
-[![devDependency Status](https://david-dm.org/davezuko/react-redux-starter-kit/dev-status.svg)](https://david-dm.org/davezuko/react-redux-starter-kit#info=devDependencies)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+Redux-Minimal is a minimalist react-redux starter kit (boilerplate) which let's you build rich real world apps. 
+It's not as light as some starter kits which only let you write a simple hello world app and then you have to struggle with installing all the other stuff yourself. 
+And it's also not as packed as other starter kits which confuse you massively with its folder/file structure and arcane scripts.
 
-This starter kit is designed to get you up and running with a bunch of awesome front-end technologies.
+Redux-Minimal contains the bare minimum to develop a real world complex app and it also comes with a small users app that will show you how to code certain features.
+A demo of the app can be seen here: [http://redux-minimal-app.catalin-luntraru.com](http://redux-minimal-app.catalin-luntraru.com)
 
-The primary goal of this project is to provide a stable foundation upon which to build modern web appliications. Its purpose is not to dictate your project structure or to demonstrate a complete real-world application, but to provide a set of tools intended to make front-end development robust, easy, and, most importantly, fun. Check out the full feature list below!
 
-Finally, This project wouldn't be possible without the help of our many contributors. What you see today is the product of hundreds changes made to keep up with an ever-evolving ecosystem. [Thank you](#thank-you) for all of your help.
+# Getting started
 
-## Table of Contents
-1. [Requirements](#requirements)
-1. [Installation](#getting-started)
-1. [Running the Project](#running-the-project)
-1. [Project Structure](#project-structure)
-1. [Live Development](#local-development)
-    * [Hot Reloading](#hot-reloading)
-    * [Redux DevTools](#redux-devtools)
-1. [Routing](#routing)
-1. [Testing](#testing)
-    * [dirty-chai](#dirty-chai)
-1. [Building for Production](#building-for-production)
-1. [Deployment](#deployment)
-1. [Thank You](#thank-you)
+1. Before you start working with redux-minimal, you first need to setup your environment. Make sure you have the following installed:
+    * [Git](https://git-scm.com/downloads)
+    * [NodeJs and Npm](https://nodejs.org/en/download/current/)
+    * an IDE to write js code in, for example [Webstorm](https://www.jetbrains.com/webstorm/download/)
 
-## Requirements
-* node `^5.0.0`
-* yarn `^0.23.0` or npm `^3.0.0`
+2. Once your environment is prepared, open a command prompt (terminal) and type in the following:
 
-## Installation
+    ```sh
+    cd C:\js\node\apps
+    git clone https://github.com/catalin-luntraru/redux-minimal.git hello-world
+    cd hello-world
+    npm install
+    npm start
+    ```
 
-After confirming that your environment meets the above [requirements](#requirements), you can create a new project based on `react-redux-starter-kit` by doing the following:
+3. Then open your [http://localhost:8080/](http://localhost:8080/) to see the included small users app. 
+Congratulations! You can now write react redux code.
 
-```bash
-$ git clone https://github.com/davezuko/react-redux-starter-kit.git <my-project-name>
-$ cd <my-project-name>
-```
+4. For more productivity you can install Chrome's [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 
-When that's done, install the project dependencies. It is recommended that you use [Yarn](https://yarnpkg.com/) for deterministic dependency management, but `npm install` will suffice.
 
-```bash
-$ yarn  # Install project dependencies (or `npm install`)
-```
+# Video tutorial
 
-## Running the Project
+I made a video tutorial series, to help people out getting started with react and redux. It covers the basics, like what is react, redux, etc, and also setting up the environment with redux-minimal and guiding you step by step with creating the demo users app. You will also understand why code was written this way, where refactoring was needed, etc.
 
-After completing the [installation](#installation) step, you're ready to start the project!
+[Let's learn React and Redux with Javascript's new ES6 syntax, from Beginner to Intermediate to Advanced](https://www.youtube.com/watch?v=d0oUGmSE6IY&list=PLJBrYU54JD2pTblB20OmV7GL6H5J-p2g8)
 
-```bash
-$ yarn start  # Start the development server (or `npm start`)
-```
+# Why use this?
 
-While developing, you will probably rely mostly on `yarn start`; however, there are additional scripts at your disposal:
+Redux-Minimal contains the minimum npm packages you need to have installed in order to build a react redux real-world app containing:
+* a proper file/folder structure
+* pages (routes)
+* forms with validation
+* real-world API asynchronous requests
+* unit tests
+* bootstrap react components
+* sass
+* hot loader for ease of development
+* redux tools
+* js and css bundle files built for development or production
 
-|`yarn <script>`    |Description|
-|-------------------|-----------|
-|`start`            |Serves your app at `localhost:3000`|
-|`build`            |Builds the application to ./dist|
-|`test`             |Runs unit tests with Karma. See [testing](#testing)|
-|`test:watch`       |Runs `test` in watch mode to re-run tests when changed|
-|`lint`             |[Lints](http://stackoverflow.com/questions/8503559/what-is-linting) the project for potential errors|
-|`lint:fix`         |Lints the project and [fixes all correctable errors](http://eslint.org/docs/user-guide/command-line-interface.html#fix)|
+The code and implementation are minimal, which lets you focus on the real app, not the webpack, babel, gulp etc boilerplate files, which honestly you shouldn't even bother with.
 
-## Project Structure
 
-The project structure presented in this boilerplate is **fractal**, where functionality is grouped primarily by feature rather than file type. This structure is only meant to serve as a guide, it is by no means prescriptive. That said, it aims to represent generally accepted guidelines and patterns for building scalable applications. If you wish to read more about this pattern, please check out this [awesome writeup](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure) by [Justin Greenberg](https://github.com/justingreenberg).
+# Installed packages
 
-```
-.
-├── build                    # All build-related code
-├── public                   # Static public assets (not imported anywhere in source code)
-├── server                   # Express application that provides webpack middleware
-│   └── main.js              # Server application entry point
-├── src                      # Application source code
-│   ├── index.html           # Main HTML page container for app
-│   ├── main.js              # Application bootstrap and rendering
-│   ├── normalize.js         # Browser normalization and polyfills
-│   ├── components           # Global Reusable Components
-│   ├── containers           # Global Reusable Container Components
-│   ├── layouts              # Components that dictate major page structure
-│   │   └── PageLayout       # Global application layout in which to render routes
-│   ├── routes               # Main route definitions and async split points
-│   │   ├── index.js         # Bootstrap main application routes with store
-│   │   ├── Home             # Fractal route
-│   │   │   ├── index.js     # Route definitions and async split points
-│   │   │   ├── assets       # Assets required to render components
-│   │   │   ├── components   # Presentational React Components
-│   │   │   └── routes **    # Fractal sub-routes (** optional)
-│   │   └── Counter          # Fractal route
-│   │       ├── index.js     # Counter route definition
-│   │       ├── container    # Connect components to actions and store
-│   │       ├── modules      # Collections of reducers/constants/actions
-│   │       └── routes **    # Fractal sub-routes (** optional)
-│   ├── store                # Redux-specific pieces
-│   │   ├── createStore.js   # Create and instrument redux store
-│   │   └── reducers.js      # Reducer registry and injection
-│   └── styles               # Application-wide styles (generally settings)
-└── tests                    # Unit tests
-```
+Here are the npm packages that redux-minimal installs:
 
-## Live Development
+|Feature|Packages|Benefits|
+|-------|--------|--------|
+|React|[`react`](https://github.com/facebook/react)|A declarative, efficient, and flexible JavaScript library for building user interfaces|
+||[`react-dom`](https://www.npmjs.com/package/react-dom)|Serves as the entry point of the DOM-related rendering paths|
+||[`react-hot-loader`](https://github.com/gaearon/react-hot-loader)|Tweak React components in real time when developing|
+|Redux|[`redux`](https://github.com/reactjs/redux)|A predictable state container for JavaScript apps|
+||[`react-redux`](https://github.com/reactjs/react-redux)|React bindings for Redux|
+||[`redux-freeze`](https://github.com/buunguyen/redux-freeze)|Redux middleware that prevents state from being mutated anywhere in the app|
+|Router|[`react-router`](https://github.com/ReactTraining/react-router)|Declarative routing for React. Your app has pages now|
+||[`react-router-redux`](https://github.com/reactjs/react-router-redux)|Simple bindings to keep react-router and redux in sync|
+|Bootstrap|[`react-bootstrap`](https://github.com/react-bootstrap/react-bootstrap)|Bootstrap 3 components built with React|
+||[`react-router-bootstrap`](https://github.com/react-bootstrap/react-router-bootstrap)|Integration between React Router and React-Bootstrap|
+|Forms|[`redux-form`](https://github.com/erikras/redux-form)|A Higher Order Component using react-redux to keep form state in a Redux store|
+|Asynchronous|[`redux-saga`](https://github.com/yelouafi/redux-saga)|Asynchronous API calls made easy with Saga|
+|Unit tests|[`mocha`](https://github.com/mochajs/mocha)|Simple javascript test framework|
+||[`enzyme`](https://github.com/airbnb/enzyme)|JavaScript Testing utilities for React components|
+||[`react-addons-test-utils`](https://facebook.github.io/react/docs/test-utils.html)|Required by enzyme. Makes it easy to test React components|
+||[`ignore-styles`](https://www.npmjs.com/package/ignore-styles)|Ignore imported style files when running in Node|
+|Sass|[`node-sass`](https://github.com/sass/node-sass)|Mature, stable, and powerful CSS extension language|
+|Webpack|[`webpack`](https://github.com/webpack/webpack)|A bundler for javascript, css and others|
+||[`webpack-dev-server`](https://github.com/webpack/webpack-dev-server)|Serves the app at [http://localhost:8080/](http://localhost:8080/)|
+||[`extract-text-webpack-plugin`](https://github.com/webpack/extract-text-webpack-plugin)|Webpack plugin that builds the css bundle file|
+||[`style-loader`](https://github.com/webpack/style-loader)|Webpack module that loads styles|
+||[`css-loader`](https://github.com/webpack/css-loader)|Webpack module that loads css styles|
+||[`sass-loader`](https://github.com/jtangelder/sass-loader)|Webpack module that loads sass styles|
+||[`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin)|Webpack module to remove previous build files|
+|Babel|[`babel-core`](https://github.com/babel/babel/tree/master/packages/babel-core)|Compiler that helps node.js and the browser to understand the new js syntax|
+||[`babel-runtime`](https://www.npmjs.com/package/babel-runtime)|Helps node.js to understand the new js syntax|
+||[`babel-preset-es2015`](http://babeljs.io/docs/plugins/preset-es2015/)|Helps node.js to use [ES2015 Javascript syntax](http://www.ecma-international.org/ecma-262/6.0/ECMA-262.pdf)|
+||[`babel-preset-react`](http://babeljs.io/docs/plugins/preset-react/)|Helps node.js to use React's [JSX syntax](https://facebook.github.io/jsx/)|
+||[`babel-preset-stage-3`](https://babeljs.io/docs/plugins/preset-stage-0/)|Helps node.js to use the spread operator|
+||[`babel-loader`](https://github.com/babel/babel-loader)|Helps webpack to compile the new javascript syntax|
+||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
+||[`whatwg-fetch`](https://github.com/github/fetch)|Helps the browser to use fetch|
 
-### Hot Reloading
 
-Hot reloading is enabled by default when the application is running in development mode (`yarn start`). This feature is implemented with webpack's [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement.html) capabilities, where code updates can be injected to the application while it's running, no full reload required. Here's how it works:
+# Express branch
 
-* For **JavaScript** modules, a code change will trigger the application to re-render from the top of the tree. **Global state is preserved (i.e. redux), but any local component state is reset**. This differs from React Hot Loader, but we've found that performing a full re-render helps avoid subtle bugs caused by RHL patching.
+You can use the [express branch](https://github.com/catalin-luntraru/redux-minimal/tree/express) if you want to use express instead of webpack-dev-server.
 
-* For **Sass**, any change will update the styles in realtime, no additional configuration or reload needed.
 
-### Redux DevTools
+# Change host and/or port
 
-**We recommend using the [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).**
-Using the chrome extension allows your monitors to run on a separate thread and affords better performance and functionality. It comes with several of the most popular monitors, is easy to configure, filters actions, and doesn't require installing any packages in your project.
+If you don't want to use localhost on port 8080, you can change it in `package.json` and `webpack.config.js`.
 
-However, it's easy to bundle these developer tools locally should you choose to do so. First, grab the packages from npm:
 
-```bash
-yarn add --dev redux-devtools redux-devtools-log-monitor redux-devtools-dock-monitor
-```
+# Sample app
 
-Then follow the [manual integration walkthrough](https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md).
+Redux-Minimal also contains a small sample app that let's you manage some users with the following features:
+* a list of users with pagination
+* add a new user
+* edit an existing user
+* delete a user
 
-## Routing
-We use `react-router` [route definitions](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#plainroute) (`<route>/index.js`) to define units of logic within our application. See the [project structure](#project-structure) section for more information.
+The sample app provides you with basically most of the things you will need when building a new real-world app.
 
-## Testing
-To add a unit test, create a `.spec.js` file anywhere inside of `./tests`. Karma and webpack will automatically find these files, and Mocha and Chai will be available within your test without the need to import them. Here are a few important plugins and packages available to you during testing:
+The demo for the app can be found here: 
+[http://redux-minimal-app.catalin-luntraru.com](http://redux-minimal-app.catalin-luntraru.com)
 
-### dirty-chai
 
-Some of the assertions available from [chai](chaijs.com) use [magical getters](http://chaijs.com/api/bdd/#method_true). These are problematic for a few reasons:
+# Build your own app
 
-1) If you mistype a property name (e.g. `expect(false).to.be.tru`) then the expression evaluates to undefined, the magical getter on the `true` is never run, and so your test silently passes.
-2) By default, linters don't understand them and therefore mark them as unused expressions, which can be annoying.
+1. Open `webpack.config.js` and change the `app_root` value from `src_users` to `src`
 
-[Dirty Chai](https://github.com/prodatakey/dirty-chai) fixes this by converting these getters into callable functions. This way, if mistype an assertion, our attempt to invoke it will throw due to the property being undefined.
+2. Run `npm start`
 
-```js
-// This silently passes because the getter on `true` is never invoked!
-it('should be true', () => {
-  expect(false).to.be.tru // evalutes to undefined :(
-})
+3. Congratulations! You now have a blank `Hello world` starting app
 
-// Much better! Our assertion is invalid, so it throws rather than implicitly passing.
-it('should be true', () => {
-  expect(false).to.be.tru() // `tru` is not defined!
-})
-```
 
-## Building for Production
+# Scripts
 
-## Deployment
+Besides the `start` script, there are also other scripts
 
-Out of the box, this starter kit is deployable by serving the `./dist` folder generated by `yarn build`. This project does not concern itself with the details of server-side rendering or API structure, since that demands a more opinionated structure that makes it difficult to extend the starter kit. The simplest deployment strategy is a [static deployment](#static-deployments).
+|`npm run <script>`|What it does|
+|------------------|------------|
+|`start`|Starts the app at [http://localhost:8080/](http://localhost:8080/). The bundle js/css files are stored in memory|
+|`test`|Starts the unit testing using all the files found in the `test` folder|
+|`test-watch`| Starts the unit testing and watches for changes to re-run the tests|
+|`build-dev`|Builds the js/css bundle files in the `public` folder. Adds debugging code for development|
+|`build-prod`|Builds the js/css bundle minified files in the `public` folder|
 
-### Static Deployments
 
-Serve the application with a web server such as nginx by pointing it at your `./dist` folder. Make sure to direct incoming route requests to the root `./dist/index.html` file so that the client application will be loaded; react-router will take care of the rest. If you are unsure of how to do this, you might find [this documentation](https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md#configuring-your-server) helpful. The Express server that comes with the starter kit is able to be extended to serve as an API and more, but is not required for a static deployment.
+# License
 
-## Thank You
-
-This project wouldn't be possible without help from the community, so I'd like to highlight some of its biggest contributors. Thank you all for your hard work, you've made my life a lot easier and taught me a lot in the process.
-
-* [Justin Greenberg](https://github.com/justingreenberg) - For all of your PR's, getting us to Babel 6, and constant work improving our patterns.
-* [Roman Pearah](https://github.com/neverfox) - For your bug reports, help in triaging issues, and PR contributions.
-* [Spencer Dixon](https://github.com/SpencerCDixon) - For your creation of [redux-cli](https://github.com/SpencerCDixon/redux-cli).
-* [Jonas Matser](https://github.com/mtsr) - For your help in triaging issues and unending support in our Gitter channel.
-
-And to everyone else who has contributed, even if you are not listed here your work is appreciated.
+This project is licensed under the MIT license, Copyright (c) 2016 Catalin Luntraru.
