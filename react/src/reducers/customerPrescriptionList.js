@@ -47,6 +47,8 @@ export default function customerPrescriptionListReducer(state = initialState, ac
 	}
 }
 
+export const getCustomerPrescriptions = state => state.customerPrescriptionList.prescriptions.data;
+
 
 function extractPrescriptionDetails(prescription) {
   return prescription;

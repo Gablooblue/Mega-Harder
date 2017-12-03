@@ -1,4 +1,8 @@
+import {connect} from "react-redux";
 import {Button} from "react-bootstrap";
+import {getCustomerPrescriptions} from "../../reducers/customerPrescriptionList";
+import {actions} from "../../actions/customerPrescriptionList";
+
 
 var React = require("react"),
     createReactClass = require("create-react-class"),
@@ -25,6 +29,11 @@ function createButton(cell, row){
 
 
 var CustomerPrescriptionTable = createReactClass({
+  componentWillMount: function () {
+    console.log('componentWillMount');
+    this.props.fetchPrescriptions();
+  },
+
     createButton: function(cell, row){
         var onClick = (function(){
             this.props.onClick(row.id);
@@ -38,11 +47,11 @@ var CustomerPrescriptionTable = createReactClass({
         return (
             <div>
                 <h2>Prescriptions</h2>
-                <Table data={data} tableContainerClass="prescription-table">
+                <Table data={this.props.prescriptions} tableContainerClass="prescription-table">
                     <TableHeaderColumn isKey dataField="details">Prescription Details</TableHeaderColumn>
                     <TableHeaderColumn
                         dataField="order"
-                        dataFormat = {this.createButton}></TableHeaderColumn>
+                        dataFormat = {this.createButton}/>
                 </Table>
             </div>
         );
@@ -50,4 +59,17 @@ var CustomerPrescriptionTable = createReactClass({
 });
 
 
-module.exports = CustomerPrescriptionTable;
+
+const mapStateToProps = (state) => {
+  return {
+    prescriptions: getCustomerPrescriptions(state)
+  };
+};
+
+const {fetchPrescriptions} = actions;
+
+
+export default connect(mapStateToProps, {
+  fetchPrescriptions
+})(CustomerPrescriptionTable)
+
