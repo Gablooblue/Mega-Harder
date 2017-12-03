@@ -12,3 +12,17 @@
         font: 2.2em Verdana, sans-serif;
     }
 }
+
+$glacier-blue: #1995AD;
+$overcast: #F1F1F2;
+$ice: #A1D6E2;
+$warm-gray: #BCBABE;
+
+$navbar-default-bg: $glacier-blue;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: $warm-gray;
+
+$body-bg: $overcast;
+$brand-primary: $glacier-blue;
+
+$btn-primary-color: white;
