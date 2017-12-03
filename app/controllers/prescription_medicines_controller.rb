@@ -4,7 +4,7 @@ class PrescriptionMedicinesController < ApplicationController
   # GET /prescription_medicines
   # GET /prescription_medicines.json
   def index
-    @prescription_medicines = PrescriptionMedicine.all
+      @prescription_medicines = PrescriptionMedicine.where(prescription_id: params[:prescription_id])
   end
 
   # GET /prescription_medicines/1
@@ -64,7 +64,7 @@ class PrescriptionMedicinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_prescription_medicine
-      @prescription_medicine = PrescriptionMedicine.find(params[:id])
+      @prescription_medicine = PrescriptionMedicine.find_by(id: params[:id], prescription_id: params[:prescription_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

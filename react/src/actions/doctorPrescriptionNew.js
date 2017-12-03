@@ -1,117 +1,44 @@
-import {types} from "../actions/doctorPrescriptionList";
-import {STATUS_INITIAL, STATUS_LOADING, STATUS_SUCCESSFUL, STATUS_FAILED} from "../constants";
+export const types = {
+	CUSTOMERS_FETCH_REQUESTED: 'DOCTOR/CUSTOMERS_FETCH_REQUESTED',
+	CUSTOMERS_FETCH_SUCCEEDED: 'DOCTOR/CUSTOMERS_FETCH_SUCCEEDED',
+	CUSTOMERS_FETCH_FAILED: 'DOCTOR/CUSTOMERS_FETCH_FAILED',
 
-const initialState = {
-  customers: {
-    data: [],
-    error: '',
-    status: STATUS_INITIAL
-  },
-  medicines: {
-    data: [],
-    error: '',
-    status: STATUS_INITIAL
-  },
-  selectedCustomerId: null,
-  selectedMedicines: [],
+	MEDICINES_FETCH_REQUESTED: 'DOCTOR/MEDICINES_FETCH_REQUESTED',
+	MEDICINES_FETCH_SUCCEEDED: 'DOCTOR/MEDICINES_FETCH_SUCCEEDED',
+	MEDICINES_FETCH_FAILED: 'DOCTOR/MEDICINES_FETCH_FAILED',
 
-  // Submission status
-  status: STATUS_INITIAL,
-  error: ''
+  CUSTOMER_SET: 'DOCTOR/CUSTOMER_SET',
+
+  MEDICINE_ADD: 'DOCTOR/MEDICINE_ADD',
+  MEDICINE_REMOVE: 'DOCTOR/MEDICINE_REMOVE',
+  MEDICINE_QUANTITY_UPDATE: 'DOCTOR/MEDICINE_QUANTITY_UPDATE',
+
+	PRESCRIPTION_CREATE_REQUESTED: 'DOCTOR/PRESCRIPTION_CREATE_REQUESTED',
+	PRESCRIPTION_CREATE_SUCCEEDED: 'DOCTOR/PRESCRIPTION_CREATE_SUCCEEDED',
+	PRESCRIPTION_CREATE_FAILED: 'DOCTOR/PRESCRIPTION_CREATE_FAILED'
 };
 
 
-export default function doctorPrescriptionNewReducer(state = initialState, action) {
-  switch (action.type) {
-    case types.CUSTOMERS_FETCH_REQUESTED:
-      return {
-        ...state,
-        customers: {
-          ...state.customers,
-          status: STATUS_LOADING
-        }
-      };
-    case types.CUSTOMERS_FETCH_SUCCEEDED:
-      let customers = [];
-      action.customers.forEach(function (customer) {
-        customers.push(extractCustomerDetails(customer));
-      });
-      return {
-        ...state,
-        customers: {
-          ...state.customers,
-          status: STATUS_SUCCESSFUL,
-          data: customers
-        }
-      };
-    case types.CUSTOMERS_FETCH_FAILED:
-      return {
-        ...state,
-        customers: {
-          ...state.customers,
-          status: STATUS_FAILED,
-          error: action.error
-        }
-      };
+export const actions = {
+	fetchCustomers: () => ({type: types.CUSTOMERS_FETCH_REQUESTED}),
+	fetchCustomersSucceeded: (customers) => ({type: types.CUSTOMERS_FETCH_SUCCEEDED, customers}),
+	fetchCustomersFailed: (error) => ({type: types.CUSTOMERS_FETCH_FAILED, error}),
 
-    case types.MEDICINES_FETCH_REQUESTED:
-      return {
-        ...state,
-        medicines: {
-          ...state.medicines,
-          status: STATUS_LOADING
-        }
-      };
-    case types.MEDICINES_FETCH_SUCCEEDED:
-      let medicines = [];
-      action.medicines.forEach(function (medicine) {
-        medicines.push(extractMedicineDetails(medicine));
-      });
-      return {
-        ...state,
-        medicines: {
-          ...state.medicines,
-          status: STATUS_SUCCESSFUL,
-          data: medicines
-        }
-      };
-    case types.MEDICINES_FETCH_FAILED:
-      return {
-        ...state,
-        medicines: {
-          ...state.medicines,
-          status: STATUS_FAILED,
-          error: action.error
-        }
-      };
+	fetchMedicines: () => ({type: types.MEDICINES_FETCH_REQUESTED}),
+	fetchMedicinesSucceeded: (medicines) => ({type: types.MEDICINES_FETCH_SUCCEEDED, medicines}),
+	fetchMedicinesFailed: (error) => ({type: types.MEDICINES_FETCH_FAILED, error}),
 
-    case types.PRESCRIPTION_CREATE_REQUESTED:
-      return {
-        ...state,
-        status: STATUS_LOADING
-      };
-    case types.PRESCRIPTION_CREATE_SUCCEEDED:
-      return {
-        ...state,
-        status: STATUS_SUCCESSFUL,
-      };
-    case types.PRESCRIPTION_CREATE_FAILED:
-      return {
-        ...state,
-        status: STATUS_FAILED,
-        error: action.error
-      };
+  setCustomer: (customerId) => ({type: types.MEDICINE_ADD, customerId}),
 
-    default:
-      return state;
-  }
-}
+  addMedicine: (medicine) => ({type: types.MEDICINE_ADD, medicine}),
+  removeMedicine: (medicineId) => ({type: types.MEDICINE_REMOVE, medicineId}),
+  updateMedicineQuantity: (medicineId, quantity) => ({type: types.MEDICINE_QUANTITY_UPDATE, medicineId, quantity}),
+
+	createPrescription: () => ({type: types.PRESCRIPTION_CREATE_REQUESTED}),
+	createPrescriptionSucceeded: () => ({type: types.PRESCRIPTION_CREATE_SUCCEEDED}),
+	createPrescriptionFailed: (error) => ({type: types.PRESCRIPTION_CREATE_FAILED, error}),
+};
 
 
-function extractCustomerDetails(customer) {
-  return customer;
-}
 
-function extractMedicineDetails(medicine) {
-  return medicine;
-}
+
