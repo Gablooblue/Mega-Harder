@@ -1,4 +1,4 @@
-import {types} from "../actions/doctorPrescriptionNew";
+import {types} from "../actions/customerPrescriptionNew";
 import {STATUS_INITIAL, STATUS_LOADING, STATUS_SUCCESSFUL, STATUS_FAILED} from "../constants";
 
 const initialState = {
@@ -21,7 +21,7 @@ const initialState = {
 };
 
 
-export default function doctorPrescriptionNewReducer(state = initialState, action) {
+export default function customerPrescriptionNewReducer(state = initialState, action) {
   switch (action.type) {
     case types.PRESCRIBED_MEDICINES_FETCH_REQUESTED:
       return {
@@ -33,7 +33,7 @@ export default function doctorPrescriptionNewReducer(state = initialState, actio
       };
     case types.PRESCRIBED_MEDICINES_FETCH_SUCCEEDED:
       let prescribedMedicines = [];
-      action.prescribedMedicines.forEach(function (prescribedMedicine) {
+      action.medicines.forEach(function (prescribedMedicine) {
         prescribedMedicines.push(extractPrescribedMedicinesDetails(prescribedMedicine));
       });
       return {
@@ -147,6 +147,11 @@ export default function doctorPrescriptionNewReducer(state = initialState, actio
       return state;
   }
 }
+
+
+export const getCustomerPrescriptionMedicine = state => state.customerPrescriptionNew.prescribedMedicines.data;
+export const getMedicines = state => state.customerPrescriptionNew.medicines.data;
+export const getState = state => state;
 
 
 function extractPrescribedMedicinesDetails(prescribedMedicine) {

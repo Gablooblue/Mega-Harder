@@ -62,11 +62,8 @@ class Header extends React.Component {
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <li role="presentation" className={doctorPrescriptionListClass}><a role="button" onClick={this.goToDoctorPrescriptionListPage}>Doctor Prescriptions</a></li>
-          <li role="presentation" className={doctorPrescriptionNewClass}><a role="button"  onClick={this.goToDoctorPrescriptionNewPage}>New Doctor Prescriptions</a></li>
-
-          <li role="presentation" className={customerPrescriptionListClass}><a role="button" onClick={this.goToCustomerPrescriptionListPage}>Customer Prescriptions</a></li>
-          <li role="presentation" className={customerPrescriptionNewClass}><a role="button"  onClick={this.goToCustomerPrescriptionNewPage}>New Customer Prescriptions</a></li>
+          <li role="presentation" className={customerPrescriptionListClass}><a role="button" onClick={this.goToCustomerPrescriptionListPage}>Prescriptions</a></li>
+          <li role="presentation" className={customerPrescriptionNewClass}><a role="button"  onClick={this.goToCustomerPrescriptionNewPage}>New Prescriptions</a></li>
         </Nav>
       </Navbar>
     );
