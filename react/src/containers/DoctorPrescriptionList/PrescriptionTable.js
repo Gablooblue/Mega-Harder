@@ -17,14 +17,14 @@ var data = [{
 
 
 var PrescriptionTable = createReactClass({
-    
-    
+
+
     render: function(){
         return (
             <div className = "main-content">
                 <div className = "tabular-list">
                     <h2>Prescriptions</h2>
-                    <input type = "button" onClick = {null}>
+                    <input type = "button" onClick = {null}/>
                     <Table data={data} tableContainerClass="prescription-table">
                         <TableHeaderColumn isKey dataField="name">Name</TableHeaderColumn>
                         <TableHeaderColumn dataField="date">Date</TableHeaderColumn>

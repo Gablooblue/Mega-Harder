@@ -40,7 +40,7 @@ var MedicineSelection = createReactClass({
 
     render: function(){
         var options = this.props.options.map(function(option){
-            return <option value = {option.value} key = {option.value}>{option.label}</option>  
+            return <option value = {option.value} key = {option.value}>{option.label}</option>
         });
 
         return (
@@ -48,7 +48,7 @@ var MedicineSelection = createReactClass({
                 <select value = {this.state.selected || ""} onChange = {this.onChange}>
                     {options}
                 </select>
-                <input type = "button" value = "Add New Medication" onClick = {this.onClick} />
+              <Button onClick = {this.onClick}>Add New Medication</Button>
             </div>
         )
     }

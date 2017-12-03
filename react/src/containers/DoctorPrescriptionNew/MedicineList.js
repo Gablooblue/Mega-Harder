@@ -51,7 +51,7 @@ var MedicineList = createReactClass({
             medicines[rowId].quantity = quantity;
 
             this.setState({
-                medicines: medicines 
+                medicines: medicines
             });
         }).bind(this);
     },
@@ -65,7 +65,7 @@ var MedicineList = createReactClass({
     },
 
     render: function(){
-        
+
 
         return (
             <div className = "main-content">
@@ -74,13 +74,13 @@ var MedicineList = createReactClass({
                         <Table data={this.state.medicines}>
                             <TableHeaderColumn isKey dataField="medtype">Medicine</TableHeaderColumn>
                             <TableHeaderColumn dataField="average">Averge</TableHeaderColumn>
-                            <TableHeaderColumn 
-                                dataField="quantity" 
+                            <TableHeaderColumn
+                                dataField="quantity"
                                 dataFormat = {this.createNumberInput}
                                 editColumnClassName = {"editable-cell"}>Quantity</TableHeaderColumn>
                         </Table>
                         <MedicineSelection options = {medicineTypes} onAdd = {this.onAdd}/>
-                        <input type = "button" value = "submit" />
+                        <Button>Submit</Button>
                     </div>
                 </div>
             </div>

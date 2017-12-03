@@ -1,3 +1,5 @@
+import {Button} from "react-bootstrap";
+
 var React = require("react"),
     createReactClass = require("create-react-class"),
     ReactTable = require("react-bootstrap-table"),
@@ -28,8 +30,8 @@ var CustomerPrescriptionTable = createReactClass({
             this.props.onClick(row.id);
         }).bind(this);
 
-        return <input type = "button" value = "Place Order" onClick = {onClick}/>
-    
+      return <Button onClick = {onClick}>Place Order</Button>
+
     },
 
     render: function(){
@@ -38,7 +40,7 @@ var CustomerPrescriptionTable = createReactClass({
                 <h2>Prescriptions</h2>
                 <Table data={data} tableContainerClass="prescription-table">
                     <TableHeaderColumn isKey dataField="details">Prescription Details</TableHeaderColumn>
-                    <TableHeaderColumn 
+                    <TableHeaderColumn
                         dataField="order"
                         dataFormat = {this.createButton}></TableHeaderColumn>
                 </Table>
